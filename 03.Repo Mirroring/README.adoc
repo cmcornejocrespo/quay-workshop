@@ -1,0 +1,35 @@
+= 03 Repo Mirroring
+
+== Create a repo to mirror from
+
+* Select the repository `my-app` created in previous lab.
++
+image:images/01-quay-dashboard.png[Quay Dashboard]
++
+* `Settings`
+* Change the Repository State to `Mirror`
++
+TIP: Mirroring needs to be configured in https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/configure_red_hat_quay/config-fields-intro#config-fields-mirroring[Quay]
++
+image:images/02-quay-dashboard.png[Quay Dashboard]
++
+* Select the `Mirroring tab`
++
+image:images/03-quay-dashboard.png[Quay Dashboard]
++
+* Registry Location: `docker.io/bitnami/nginx`
+* Tags: `1.1*,1.20*`
+* Start Date: `Today`
+* Sync Interval: `10 seconds`
+* `Create robot account`
++
+image:images/04-quay-dashboard.png[Quay Dashboard]
++
+* Create robot account as follows (`quay_workshop_robot`)
++
+image:images/05-quay-dashboard.png[Quay Dashboard]
++
+* `Enable Mirror`
+
+
+

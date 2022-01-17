@@ -1,6 +1,7 @@
 SUPER_USERS:
 - quayadmin
 AUTHENTICATION_TYPE: Database
+FEATURE_REPO_MIRROR: true
 DISTRIBUTED_STORAGE_CONFIG:
   default:
   - LocalStorage

@@ -1,0 +1,26 @@
+= 02 Organizations
+
+== Create an Organization
+
+. `Create New Organization`
++
+image:images/01-quay-dashboard.png[Quay Dashboard]
++
+* Name this Organization `workshop-quay`.
+* `Create Organization`
++
+image:images/02-quay-dashboard.png[Quay Dashboard]
+
+## Create a Repository
+
+* `Create New Repository`.
++
+image:images/03-quay-dashboard.png[Quay Dashboard]
++
+* Name the repository `my-app`.
+
+* Change the `Repository Visibility` to `Public`.
+
+* `Create Public Repository`
++
+image:images/04-quay-dashboard.png[Quay Dashboard]

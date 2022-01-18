@@ -17,7 +17,7 @@ image:images/02-quay-dashboard.png[Quay Dashboard]
 +
 image:images/03-quay-dashboard.png[Quay Dashboard]
 +
-* Name the repository `my-app`.
+* Name the repository `mirror-nginx`.
 
 * Change the `Repository Visibility` to `Public`.
 

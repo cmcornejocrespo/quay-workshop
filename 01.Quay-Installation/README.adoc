@@ -61,6 +61,23 @@ image:images/operator-subscription.png[]
 $ oc apply --kustomize ./kustomize/quay-operator/base
 ```
 
+=== Installing Multi-Cloud Object Gateway from the CLI (out of the scope of the workshop)
+
+More information can be found https://access.redhat.com/documentation/en-us/red_hat_quay/3.6/html/deploy_red_hat_quay_on_openshift_with_the_quay_operator/operator-preconfigure#operator-managed-storage[here
+]
+```sh
+# install odf operator
+$ oc apply --kustomize ./kustomize/odf-operator/base
+
+# install nooba
+$ oc apply --kustomize ./kustomize/noobaa-gateway/base
+..
+$ oc get -n openshift-storage noobaas noobaa -w
+..
+#  make the PersistentVolume backing store the default
+$ oc patch bucketclass noobaa-default-bucket-class --patch '{"spec":{"placementPolicy":{"tiers":[{"backingStores":["noobaa-pv-backing-store"]}]}}}' --type merge -n openshift-storage
+```
+
 == Deploying the Quay instance
 
 === Deploying the Quay instance from the OpenShift console

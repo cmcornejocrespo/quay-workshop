@@ -2,7 +2,7 @@
 
 == Create a repo to mirror from
 
-* Select the repository `my-app` created in previous lab.
+* Select the repository `mirror-nginx` created in previous lab.
 +
 image:images/01-quay-dashboard.png[Quay Dashboard]
 +

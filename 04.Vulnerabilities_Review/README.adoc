@@ -1,0 +1,35 @@
+= 04 Inspecting image layers and CVE's
+
+* Navigate to the `workshop-quay/mirror-nginx` repository.
+* Click the Tags icon on the left.
++
+image:images/01-quay-dashboard.png[Quay Dashboard]
++
+* You can pick any image, with several `High` and `fixable` results shown under the `SECURITY SCAN` field. Let's explore this one.
++
+image:images/02-quay-dashboard.png[Quay Dashboard]
++
+* Now let's explore the `SHA256` value, listed under `MANIFEST`
++
+image:images/03-quay-dashboard.png[Quay Dashboard]
++
+* You should now see the layers dashboard as depicted in the image below
++
+image:images/04-quay-dashboard.png[Quay Dashboard]
++
+* Quay has extracted the various Dockerfile directives that comprise this image. Inspect the 3 directives included in this image `CMD`, `ENTRYPOINT`, and `USER`. This feature is very useful when inspecting complex images that intend to run applications.
+* Click the `Security Scan` icon on the left, depicted in the image below.
++
+image:images/05-quay-dashboard.png[Quay Dashboard]
++
+* You should now see the Security Scan Dashboard like the picture, similar to the picture below:
++
+image:images/06-quay-dashboard.png[Quay Dashboard]
++
+* Click the `Packages` icon on the left, depicted in the image below.
++
+image:images/07-quay-dashboard.png[Quay Dashboard]
++
+* You should now see the Packages Dashboard like the picture, similar to the picture below:
++
+image:images/08-quay-dashboard.png[Quay Dashboard]

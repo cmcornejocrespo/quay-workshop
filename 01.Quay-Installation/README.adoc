@@ -28,7 +28,7 @@ image:images/operator-subscription-cso.png[]
 === Installing the Quay Security Operator from the CLI
 
 ```sh
-$ oc apply --kustomize ./kustomize/container-security-operator/base
+$ oc apply --kustomize kustomize/container-security-operator/base
 ```
 == Installing the Quay Operator
 
@@ -58,19 +58,35 @@ image:images/operator-subscription.png[]
 === Installing the Quay Operator from the CLI
 
 ```sh
-$ oc apply --kustomize ./kustomize/quay-operator/base
+$ oc apply --kustomize kustomize/quay-operator/base
 ```
 
-=== Installing Multi-Cloud Object Gateway from the CLI (out of the scope of the workshop)
+=== Installing Quay prerequisites (out of the scope of the workshop)
 
-More information can be found https://access.redhat.com/documentation/en-us/red_hat_quay/3.6/html/deploy_red_hat_quay_on_openshift_with_the_quay_operator/operator-preconfigure#operator-managed-storage[here
-]
+==== OpenShift Data Foundation
+
+* Worker nodes must be labeled with a label `cluster.ocs.openshift.io/openshift-storage=`
+* The default storage class is set to `gp2` (AWS)
+
 ```sh
-# install odf operator
-$ oc apply --kustomize ./kustomize/odf-operator/base
+$ oc apply --kustomize odf-operator/base
 
+$ oc get csv --namespace openshift-storage
+# Wait until the odf-operator csvs are fully deployed (All csvs must reach the phase Succeeded)
+
+# Deploy an ODF instance on AWS
+$ oc apply --kustomize kustomize/odf-instance/overlays/aws
+
+# Watch for the status of the Available condition to change to True
+$ oc get storagecluster \
+  --namespace openshift-storage \
+  --output jsonpath='{.items[0].status.conditions[?(@.type=="Available")].status}'
+```
+==== Multi-Cloud Object Gateway
+
+```sh
 # install nooba
-$ oc apply --kustomize ./kustomize/noobaa-gateway/base
+$ oc apply --kustomize kustomize/noobaa-gateway/base
 ..
 $ oc get -n openshift-storage noobaas noobaa -w
 ..
@@ -93,7 +109,7 @@ $ oc patch bucketclass noobaa-default-bucket-class --patch '{"spec":{"placementP
 === Deploying the Quay instance from the CLI
 
 ```sh
-$ oc apply --kustomize ./kustomize/quay-instance/base
+$ oc apply --kustomize kustomize/quay-instance/base
 ```
 
 == Navigation

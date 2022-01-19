@@ -1,5 +1,7 @@
 = 04 Inspecting image layers and CVE's
 
+== Managing vulnerabilities using the Quay instance
+
 * Navigate to the `workshop-quay/mirror-nginx` repository.
 * Click the Tags icon on the left.
 +
@@ -33,3 +35,15 @@ image:images/07-quay-dashboard.png[Quay Dashboard]
 * You should now see the Packages Dashboard like the picture, similar to the picture below:
 +
 image:images/08-quay-dashboard.png[Quay Dashboard]
+
+== Managing vulnerabilities using the OpenShift console (Quay Container Security Operator)
+
+* Let's start deploying any image from the mirror repository configured previuosly
++
+```sh
+
+```
+
+== Navigation
+
+link:../03.Repo-Mirroring/README.adoc[[Previous]]

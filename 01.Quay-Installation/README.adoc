@@ -98,4 +98,4 @@ $ oc apply --kustomize ./kustomize/quay-instance/base
 
 == Navigation
 
-* link:../02.Organizations/README.adoc[[Next]]
+link:../02.Organizations/README.adoc[[Next]]

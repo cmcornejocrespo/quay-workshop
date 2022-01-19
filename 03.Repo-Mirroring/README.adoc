@@ -35,4 +35,4 @@ image:images/06-quay-dashboard.png[Quay Dashboard]
 
 == Navigation
 
-* link:../02.Organizations/README.adoc/README.adoc[[Previous]]|link:../04.Vulnerabilities-Review/README.adoc[[Next]]
+link:../02.Organizations/README.adoc/README.adoc[[Previous]]|link:../04.Vulnerabilities-Review/README.adoc[[Next]]

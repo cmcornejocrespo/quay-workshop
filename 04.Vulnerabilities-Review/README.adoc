@@ -38,11 +38,39 @@ image:images/08-quay-dashboard.png[Quay Dashboard]
 
 == Managing vulnerabilities using the OpenShift console (Quay Container Security Operator)
 
-* Let's start deploying any image from the mirror repository configured previuosly
+Initially the cluster is showing no image vulnerabilities, similar to the picture below:
+
+image:images/09-quay-dashboard.png[Quay Dashboard]
+
+* Let's start deploying some applications and observe the behavior of the vulnerability scanning.
 +
 ```sh
-
+$ oc apply --kustomize kustomize/base
 ```
++
+image:images/10-quay-dashboard.png[Quay Dashboard]
++
+IMPORTANT: Container images from Quay are analyzed to identify vulnerabilities. Images from other registries are not scanned.
++
+* Cick on `View all` and observe the dashboard
++
+image:images/11-quay-dashboard.png[Quay Dashboard]
++
+* Next we can click on the `Manifest` or in the `Vulnerabilities` link from the OpenShift Console and we get redirected to the quay security scan view.
++
+image:images/12-quay-dashboard.png[Quay Dashboard]
++
+* Now let's pick up an image tag from the mirroring repository and deploy it to observe again how the scanning behaves:
++
+```sh
+$ oc create deployment test-quay --image=quay-registry-quay-quay-enterprise.apps.cluster-6ce5.sandbox1541.opentlc.com/workshop-quay/mirror-nginx:1.14.2-r9 -n test-vulnerabilities
+```
++
+image:images/13-quay-dashboard.png[Quay Dashboard]
++
+* If we click now on the `Manifest` we can see that it redirects you to the quay instance that contains tha repository:
++
+image:images/14-quay-dashboard.png[Quay Dashboard]
 
 == Navigation
 

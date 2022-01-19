@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ambassador
+  name: ambassador
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ambassador
+  template:
+    metadata:
+      labels:
+        app: ambassador
+    spec:
+      containers:
+      - image: quay.io/datawire/ambassador:1.14.2
+        imagePullPolicy: IfNotPresent
+        name: ambassador

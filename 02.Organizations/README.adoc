@@ -24,3 +24,7 @@ image:images/03-quay-dashboard.png[Quay Dashboard]
 * `Create Public Repository`
 +
 image:images/04-quay-dashboard.png[Quay Dashboard]
+
+== Navigation
+
+* link:../01.Quay-Installation/README.adoc[[Previous]]|link:../03.Repo-Mirroring/README.adoc[[Next]]

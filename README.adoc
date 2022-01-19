@@ -15,5 +15,5 @@ This workshop is split into the following sections:
 
 * link:01.Quay-Installation/README.adoc[Quay Installation]
 * link:02.Organizations/README.adoc[Organizations]
-* link:03.Repo_Mirroring/README.adoc[Repo Mirroring]
-* link:04.Vulnerabilities_Review/README.adoc[Inspecting image layers and CVE's]
+* link:03.Repo-Mirroring/README.adoc[Repo Mirroring]
+* link:04.Vulnerabilities-Review/README.adoc[Inspecting image layers and CVE's]

@@ -69,10 +69,10 @@ $ oc apply --kustomize kustomize/quay-operator/base
 * The default storage class is set to `gp2` (AWS)
 
 ```sh
-$ oc apply --kustomize odf-operator/base
+$ oc apply --kustomize kustomize/odf-operator/base
 
-$ oc get csv --namespace openshift-storage
 # Wait until the odf-operator csvs are fully deployed (All csvs must reach the phase Succeeded)
+$ oc get csv --namespace openshift-storage
 
 # Deploy an ODF instance on AWS
 $ oc apply --kustomize kustomize/odf-instance/overlays/aws
@@ -85,7 +85,7 @@ $ oc get storagecluster \
 ==== Multi-Cloud Object Gateway
 
 ```sh
-# install nooba
+# install nooba (optional as it should have been setup already by odf)
 $ oc apply --kustomize kustomize/noobaa-gateway/base
 ..
 $ oc get -n openshift-storage noobaas noobaa -w

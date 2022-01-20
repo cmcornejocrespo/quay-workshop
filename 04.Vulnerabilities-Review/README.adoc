@@ -72,6 +72,31 @@ image:images/13-quay-dashboard.png[Quay Dashboard]
 +
 image:images/14-quay-dashboard.png[Quay Dashboard]
 
+== Managing vulnerabilities using Quay across multiple clusters
+
+.This scenario requires having at least two clusters. One cluster hosts the quay instance (quay-hub) and the other cluster (quay-peers) will have installed CSO.
+
+* Let's deploy the same applicacions in cluster-a (quay-hub) and cluster-b (quay-peer)
+
+```sh
+<quay-hub>$ oc apply --kustomize kustomize/base
+<quay-hub>$ oc create deployment test-quay --image=quay-registry-quay-quay-enterprise.apps.cluster-6ce5.sandbox1541.opentlc.com/workshop-quay/mirror-nginx:1.14.2-r9 -n test-vulnerabilities
+...
+
+<quay-peer>$ oc apply --kustomize kustomize/base
+<quay-peer>$ oc create deployment test-quay --image=quay-registry-quay-quay-enterprise.apps.cluster-6ce5.sandbox1541.opentlc.com/workshop-quay/mirror-nginx:1.14.2-r9 -n test-vulnerabilities
+```
+* We can check that in both clusters the same vulnerabilities are available and both redirect to the same quay endpoint.
+
+.quay-hub
+image:images/15-quay-dashboard.png[Quay Dashboard]
+
+.quay-peer
+image:images/16-quay-dashboard.png[Quay Dashboard]
+
+.Quay Security Scan
+image:images/17-quay-dashboard.png[Quay Dashboard]
+
 == Navigation
 
 link:../03.Repo-Mirroring/README.adoc[[Previous]]

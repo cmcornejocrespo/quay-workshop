@@ -15,6 +15,6 @@ spec:
         app: ambassador
     spec:
       containers:
-      - image: quay.io/datawire/ambassador:1.14.2
+      - image: quay.io/datawire/ambassador:1.14.4
         imagePullPolicy: IfNotPresent
         name: ambassador

@@ -5,6 +5,6 @@ namespace: test-vulnerabilities
 
 resources:
 - test-vulnerabilities-ns.yaml
-- nginx-d.yaml
-- ambassador-d.yaml
+- httpd-q.yaml
+- ambassador-q.yaml
 - redis-d.yaml

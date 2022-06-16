@@ -2,3 +2,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: quay-enterprise
+  annotations:
+    openshift.io/node-selector: 'node-role.kubernetes.io/infra='
+    scheduler.alpha.kubernetes.io/defaultTolerations: >-
+      [{"operator": "Exists", "effect": "NoExecute", "key": "node-role.kubernetes.io/infra"}
+      ]

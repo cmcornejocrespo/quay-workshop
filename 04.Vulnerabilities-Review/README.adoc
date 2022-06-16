@@ -1,5 +1,36 @@
 = 04 Inspecting image layers and CVE's
 
+== Installing the Quay Security Operator
+
+=== Installing the Quay Security Operator from the OpenShift console
+
+. Using the OpenShift console, Select Operators -> OperatorHub, then select the Quay Container Security.
++
+image:images/operatorhub-quay-cso.png[]
+. The Installation page outlines the features and prerequisites:
++
+image:images/operator-install-page-cso.png[]
+. Select Install. The Operator Installation page appears.
++
+image:images/operator-subscription-cso.png[]
+. The following choices are available for customizing the installation:
+
+* **Update Channel:** Choose the update channel, for example, `stable-3.6` for the latest release.
+
+* **Installation Mode:** Choose  `All namespaces on the cluster` if you want the Operator to be available cluster-wide. Choose `A specific namespace on the cluster` if you want it deployed only within a single namespace. It is recommended that you install the Operator cluster-wide. If you choose a single namespace, the monitoring component will not be available by default.
+
+* **Approval Strategy:** Choose to approve either automatic or manual updates. Automatic update strategy is recommended.
+
+. Select Install.
+
+. After a short time, you will see the Operator installed successfully in the Installed Operators page.
+
+=== Installing the Quay Security Operator from the CLI
+
+```sh
+$ oc apply --kustomize kustomize/container-security-operator/base
+```
+
 == Managing vulnerabilities using the Quay instance
 
 * Navigate to the `workshop-quay/mirror-nginx` repository.
